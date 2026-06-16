@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Suji 💖</title>
+<title>Happy Birthday Suji ❤️</title>
 
 <style>
 *{
@@ -15,182 +15,214 @@
 
 body{
     height:100vh;
-    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(
-        -45deg,
-        #ff4fd8,
-        #c44dff,
-        #8a2be2,
-        #ff7ac6
-    );
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1a0033,#3d0066,#70004d);
+    color:white;
+    text-align:center;
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* Floating Hearts */
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.hearts span{
+    position:absolute;
+    display:block;
+    color:#ff4da6;
+    font-size:20px;
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:1;
+    }
 }
 
 .container{
-    text-align:center;
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.25);
-    padding:45px;
-    border-radius:30px;
-    box-shadow:0 0 40px rgba(255,105,180,0.35);
+    position:relative;
     z-index:10;
+    max-width:1100px;
 }
 
 h1{
-    color:white;
-    margin-bottom:30px;
-    font-size:2.2rem;
-    text-shadow:0 0 20px #ffb3f6;
+    font-size:5rem;
+    color:#ff66cc;
+    text-shadow:0 0 20px #ff66cc;
 }
 
-#countdown{
+.subtitle{
+    margin-top:10px;
+    font-size:1.4rem;
+    color:#ffd6f5;
+}
+
+.countdown{
+    margin-top:50px;
     display:flex;
-    gap:15px;
+    gap:25px;
     justify-content:center;
     flex-wrap:wrap;
 }
 
 .box{
-    min-width:120px;
-    padding:20px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.2);
+    width:220px;
+    height:260px;
+    border:2px solid #ff4da6;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(255,77,166,0.8);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-.number{
-    font-size:2.5rem;
-    font-weight:bold;
-    color:#ffffff;
-    text-shadow:0 0 15px #ff9cf5;
+.box h2{
+    font-size:5rem;
 }
 
-.label{
-    margin-top:5px;
-    color:#fff;
-    letter-spacing:1px;
+.box p{
+    font-size:1.3rem;
+    letter-spacing:2px;
 }
 
-/* Floating Hearts & Flowers */
-
-.float{
-    position:absolute;
-    bottom:-50px;
-    font-size:28px;
-    animation:floatUp 12s linear infinite;
-    opacity:0.9;
+.footer{
+    margin-top:40px;
+    font-size:1.5rem;
+    color:#ffcce6;
 }
 
-.float:nth-child(1){left:5%;animation-delay:0s;}
-.float:nth-child(2){left:15%;animation-delay:2s;}
-.float:nth-child(3){left:25%;animation-delay:4s;}
-.float:nth-child(4){left:35%;animation-delay:1s;}
-.float:nth-child(5){left:45%;animation-delay:6s;}
-.float:nth-child(6){left:55%;animation-delay:3s;}
-.float:nth-child(7){left:65%;animation-delay:5s;}
-.float:nth-child(8){left:75%;animation-delay:2s;}
-.float:nth-child(9){left:85%;animation-delay:7s;}
-.float:nth-child(10){left:95%;animation-delay:4s;}
+.message{
+    display:none;
+    font-size:4rem;
+    color:#ff66cc;
+    text-shadow:0 0 30px #ff66cc;
+    animation:glow 1s infinite alternate;
+}
 
-@keyframes floatUp{
-    0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:0;
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ff66cc;
     }
-    10%{
-        opacity:1;
+    to{
+        text-shadow:0 0 40px #ff66cc;
     }
-    100%{
-        transform:translateY(-120vh) rotate(360deg);
-        opacity:0;
+}
+
+@media(max-width:768px){
+    h1{
+        font-size:3rem;
+    }
+
+    .box{
+        width:150px;
+        height:180px;
+    }
+
+    .box h2{
+        font-size:3rem;
     }
 }
 </style>
 </head>
-
 <body>
 
-<div class="float">💖</div>
-<div class="float">🌸</div>
-<div class="float">💕</div>
-<div class="float">🌷</div>
-<div class="float">💗</div>
-<div class="float">🌹</div>
-<div class="float">💞</div>
-<div class="float">🌺</div>
-<div class="float">❤️</div>
-<div class="float">🌼</div>
+<div class="hearts" id="hearts"></div>
 
 <div class="container">
 
-<h1>You have to wait untill!!!💖</h1>
+    <h1>Happy Birthday Suji ❤️</h1>
+    <div class="subtitle">Counting down to your special day ✨</div>
 
-<div id="countdown">
+    <div class="countdown" id="countdown">
 
-<div class="box">
-<div class="number" id="days">0</div>
-<div class="label">Days</div>
-</div>
+        <div class="box">
+            <h2 id="days">0</h2>
+            <p>DAYS</p>
+        </div>
 
-<div class="box">
-<div class="number" id="hours">0</div>
-<div class="label">Hours</div>
-</div>
+        <div class="box">
+            <h2 id="hours">0</h2>
+            <p>HOURS</p>
+        </div>
 
-<div class="box">
-<div class="number" id="minutes">0</div>
-<div class="label">Minutes</div>
-</div>
+        <div class="box">
+            <h2 id="minutes">0</h2>
+            <p>MINUTES</p>
+        </div>
 
-<div class="box">
-<div class="number" id="seconds">0</div>
-<div class="label">Seconds</div>
-</div>
+        <div class="box">
+            <h2 id="seconds">0</h2>
+            <p>SECONDS</p>
+        </div>
 
-</div>
+    </div>
+
+    <div class="footer">
+        You make every moment beautiful 💖
+    </div>
+
+    <div class="message" id="birthdayMessage">
+        🎉 Happy Birthday Suji 🎂❤️
+    </div>
 
 </div>
 
 <script>
-const targetDate = new Date("July 18, 2026 00:00:00").getTime();
 
-function updateCountdown() {
+// Change Year if needed
+const birthday = new Date("July 18, 2026 00:00:00").getTime();
+
+const countdown = setInterval(()=>{
+
     const now = new Date().getTime();
-    const distance = targetDate - now;
+    const distance = birthday - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
 
     if(distance < 0){
-        document.querySelector(".container").innerHTML =
-        "<h1>🎉 Happy Birthday Suji 🎂💖</h1>";
-        return;
+        clearInterval(countdown);
+        document.getElementById("countdown").style.display="none";
+        document.querySelector(".footer").style.display="none";
+        document.getElementById("birthdayMessage").style.display="block";
     }
 
-    document.getElementById("days").innerText =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+},1000);
 
-    document.getElementById("hours").innerText =
-        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    document.getElementById("minutes").innerText =
-        Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+// Floating Hearts
+const hearts=document.getElementById("hearts");
 
-    document.getElementById("seconds").innerText =
-        Math.floor((distance % (1000 * 60)) / 1000);
+for(let i=0;i<50;i++){
+    let heart=document.createElement("span");
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.animationDuration=(Math.random()*5+5)+"s";
+    heart.style.fontSize=(Math.random()*25+15)+"px";
+    hearts.appendChild(heart);
 }
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
 </script>
 
 </body>
