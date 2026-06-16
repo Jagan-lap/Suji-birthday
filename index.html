@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Suji 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        -45deg,
+        #ff4fd8,
+        #c44dff,
+        #8a2be2,
+        #ff7ac6
+    );
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    text-align:center;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.25);
+    padding:45px;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(255,105,180,0.35);
+    z-index:10;
+}
+
+h1{
+    color:white;
+    margin-bottom:30px;
+    font-size:2.2rem;
+    text-shadow:0 0 20px #ffb3f6;
+}
+
+#countdown{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.box{
+    min-width:120px;
+    padding:20px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+}
+
+.number{
+    font-size:2.5rem;
+    font-weight:bold;
+    color:#ffffff;
+    text-shadow:0 0 15px #ff9cf5;
+}
+
+.label{
+    margin-top:5px;
+    color:#fff;
+    letter-spacing:1px;
+}
+
+/* Floating Hearts & Flowers */
+
+.float{
+    position:absolute;
+    bottom:-50px;
+    font-size:28px;
+    animation:floatUp 12s linear infinite;
+    opacity:0.9;
+}
+
+.float:nth-child(1){left:5%;animation-delay:0s;}
+.float:nth-child(2){left:15%;animation-delay:2s;}
+.float:nth-child(3){left:25%;animation-delay:4s;}
+.float:nth-child(4){left:35%;animation-delay:1s;}
+.float:nth-child(5){left:45%;animation-delay:6s;}
+.float:nth-child(6){left:55%;animation-delay:3s;}
+.float:nth-child(7){left:65%;animation-delay:5s;}
+.float:nth-child(8){left:75%;animation-delay:2s;}
+.float:nth-child(9){left:85%;animation-delay:7s;}
+.float:nth-child(10){left:95%;animation-delay:4s;}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="float">💖</div>
+<div class="float">🌸</div>
+<div class="float">💕</div>
+<div class="float">🌷</div>
+<div class="float">💗</div>
+<div class="float">🌹</div>
+<div class="float">💞</div>
+<div class="float">🌺</div>
+<div class="float">❤️</div>
+<div class="float">🌼</div>
+
+<div class="container">
+
+<h1>You have to wait untill!!!💖</h1>
+
+<div id="countdown">
+
+<div class="box">
+<div class="number" id="days">0</div>
+<div class="label">Days</div>
+</div>
+
+<div class="box">
+<div class="number" id="hours">0</div>
+<div class="label">Hours</div>
+</div>
+
+<div class="box">
+<div class="number" id="minutes">0</div>
+<div class="label">Minutes</div>
+</div>
+
+<div class="box">
+<div class="number" id="seconds">0</div>
+<div class="label">Seconds</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+const targetDate = new Date("July 18, 2026 00:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if(distance < 0){
+        document.querySelector(".container").innerHTML =
+        "<h1>🎉 Happy Birthday Suji 🎂💖</h1>";
+        return;
+    }
+
+    document.getElementById("days").innerText =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").innerText =
+        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    document.getElementById("minutes").innerText =
+        Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("seconds").innerText =
+        Math.floor((distance % (1000 * 60)) / 1000);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
